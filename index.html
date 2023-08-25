@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css"
+      integrity="sha512-/VYneElp5u4puMaIp/4ibGxlTd2MV3kuUIroR3NSQjS2h9XKQNebRQiyyoQKeiGE9mRdjSCIZf9pb7AVJ8DhCg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assests/css/stylesheet.css" />
+    <link rel="icon" href="/assests/images/favicon-32x32.png" />
+    <title>Todo List App</title>
+  </head>
+  <body>
+    <div class="parent-container">
+      <header id="top-banner">
+        <div class="floating-banner">
+          <h2>TODO</h2>
+          <i class="ri-sun-line"></i>
+          <i class="ri-moon-line"></i>
+        </div>
+      </header>
+      <form>
+        <nav id="mode">
+          <i class="ri-circle-line"></i>
+          <input type="text" placeholder="Create a new todo..." />
+        </nav>
+      </form>
+
+      <section>
+        <div id="body-closure">
+          <div class="todo-item-container"></div>
+          <div class="todo-bottom">
+            <ol>
+              <li>
+                <a href=""><span>#</span> items left</a>
+              </li>
+            </ol>
+
+            <ol class="inner-content">
+              <li><a href="">All</a></li>
+              <li><a href="">Active</a></li>
+              <li><a href="">Completed</a></li>
+            </ol>
+            <ol>
+              <li><a href="">Clear Completed</a></li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <footer><p>Drag and drop to reorder list</p></footer>
+    </div>
+  </body>
+  <script src="/assests/js/main.js"></script>
+</html>

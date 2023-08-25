@@ -1,0 +1,228 @@
+/* Global Variables  */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", "Trebuchet MS", "Lucida Sans Unicode",
+    "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+:root {
+  /* Primary colors  */
+
+  --Bright-Blue: #3abcfd;
+  --Background-left: #57ddff;
+  --Background-right: #c058f3;
+
+  /* Neutral colors  */
+  /* Light Theme  */
+
+  --Very-Light-Gray: #fafafa;
+  --Very-Light-Grayish-Blue: #e4e5f1;
+  --Light-Grayish-Blue: #d2d3db;
+  --Dark-Grayish-Blue: #9394a5;
+  --Very-Dark-Grayish-Blue: #484b6a;
+
+  /* Dark Theme  */
+
+  --Very-Dark-Blue: #161722;
+  --Very-Dark-Desaturated-Blue: #25273c;
+  --Light-Grayish-Blue: #cacde8;
+  --Light-Grayish-Blue-hover: #e4e5f1;
+  --Dark-Grayish-Blue: #777a92;
+  --Very-Dark-Grayish-Blue: #4d5066;
+  --Very-Dark-Grayish-Blue: #393a4c;
+}
+
+body,
+html {
+  font-size: 1.125rem;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background-color: var(--Very-Dark-Blue);
+}
+
+button {
+  all: unset;
+}
+
+*:focus {
+  outline: none;
+}
+
+ol li {
+  text-decoration: none;
+  list-style-type: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+/* Body  */
+
+.light-mode
+  :is(section, nav input, .todo-bottom, .todo-item1, nav, nav input:focus) {
+  background-color: var(--Very-Light-Grayish-Blue);
+}
+
+.light-mode header {
+  background-image: url(/assests/images/bg-desktop-light.jpg);
+}
+
+/* .light-mode
+  section,
+.light-mode nav input,
+.light-mode .todo-item1,
+.light-mode .todo-bottom,
+.light-mode nav,
+.light-mode nav input:focus {
+  background-color: var(--Very-Light-Grayish-Blue);
+} */
+
+header {
+  background: linear-gradient(
+    to right,
+    var(--Background-left),
+    var(--Background-right)
+  );
+  width: 100%;
+  height: 35dvh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(/assests/images/bg-desktop-dark.jpg);
+}
+
+.floating-banner {
+  font-size: 1.2rem;
+  color: var(--Very-Light-Grayish-Blue);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 4.5%;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.floating-banner button {
+  cursor: pointer;
+}
+
+i {
+  cursor: pointer;
+}
+
+.ri-moon-line {
+  display: none;
+}
+
+nav {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 1rem;
+  color: var(--Dark-Grayish-Blue);
+  font-size: 0.9rem;
+  width: 40%;
+  margin: 0 auto;
+  position: absolute;
+  top: 18%;
+  left: 30%;
+  border: 1px solid var(--Very-Dark-Desaturated-Blue);
+  background-color: var(--Very-Dark-Desaturated-Blue);
+  border-radius: 5px;
+  padding: 10px 10px;
+}
+
+nav input {
+  background-color: var(--Very-Dark-Desaturated-Blue);
+  border: 0px transparent;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+nav input:focus {
+  background-color: var(--Very-Dark-Desaturated-Blue);
+  color: var(--Dark-Grayish-Blue);
+  font-size: 0.9rem;
+  box-sizing: none;
+}
+
+.ri-circle-line {
+  font-size: 1.2rem;
+}
+
+section {
+  height: 100dvh;
+  background-color: var(--Very-Dark-Desaturated-Blue);
+}
+
+#body-closure {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  align-items: center;
+  font-size: 0.7rem;
+  width: 40%;
+  margin: 0 auto;
+  padding: 0 0 5px 0;
+  color: var(--Dark-Grayish-Blue);
+  box-shadow: 0 0 100px var(--Very-Dark-Blue);
+  border-radius: 0 0 5px 5px;
+}
+
+#body-closure ol li a {
+  color: inherit;
+}
+
+#body-closure ol li a:hover {
+  color: var(--Light-Grayish-Blue-hover);
+}
+
+.todo-item1 {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 1rem;
+  border-top: 1px solid var(--Dark-Grayish-Blue);
+  border-bottom: 1px solid var(--Dark-Grayish-Blue);
+  padding: 6px 10px;
+  background-color: var(--Very-Dark-Desaturated-Blue);
+}
+
+.todo-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 6px 10px;
+  background-color: var(--Very-Dark-Desaturated-Blue);
+}
+
+.inner-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 6px 0;
+}
+
+.inner-content a {
+  color: inherit;
+  font-size: inherit;
+}
+
+.inner-content a:nth-child(1) {
+  color: var(--Bright-Blue);
+}
+
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--Very-Dark-Grayish-Blue);
+  position: absolute;
+  top: 95%;
+  left: 40%;
+  margin-bottom: 2rem;
+}
