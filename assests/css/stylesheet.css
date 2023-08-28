@@ -40,7 +40,9 @@ html {
   font-size: 1.125rem;
   scroll-behavior: smooth;
   overflow-x: hidden;
+  /* overflow-y: hidden; */
   background-color: var(--Very-Dark-Blue);
+  transition: 0.5s;
 }
 
 button {
@@ -64,12 +66,21 @@ a {
 /* Body  */
 
 .light-mode
-  :is(section, nav input, .todo-bottom, .todo-item1, nav, nav input:focus) {
+  :is(
+    section,
+    nav input,
+    .todo-item1,
+    nav,
+    nav input:focus,
+    .inner-content,
+    .todo-bottom
+  ) {
   background-color: var(--Very-Light-Grayish-Blue);
 }
 
 .light-mode header {
   background-image: url(/assests/images/bg-desktop-light.jpg);
+  transition: 300;
 }
 
 /* .light-mode
@@ -93,6 +104,7 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(/assests/images/bg-desktop-dark.jpg);
+  transition: 300;
 }
 
 .floating-banner {
@@ -101,8 +113,8 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding-top: 4.5%;
-  width: 70%;
+  padding-top: 7%;
+  width: 50%;
   margin: 0 auto;
 }
 
@@ -128,12 +140,13 @@ nav {
   width: 40%;
   margin: 0 auto;
   position: absolute;
-  top: 18%;
+  top: 20%;
   left: 30%;
   border: 1px solid var(--Very-Dark-Desaturated-Blue);
   background-color: var(--Very-Dark-Desaturated-Blue);
   border-radius: 5px;
   padding: 10px 10px;
+  transition: 300;
 }
 
 nav input {
@@ -157,12 +170,16 @@ nav input:focus {
 section {
   height: 100dvh;
   background-color: var(--Very-Dark-Desaturated-Blue);
+  transition: 300;
+}
+
+.checkmark {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 1.5rem;
 }
 
 #body-closure {
-  display: grid;
-  grid-template-rows: repeat(2, 1fr);
-  align-items: center;
   font-size: 0.7rem;
   width: 40%;
   margin: 0 auto;
@@ -170,6 +187,8 @@ section {
   color: var(--Dark-Grayish-Blue);
   box-shadow: 0 0 100px var(--Very-Dark-Blue);
   border-radius: 0 0 5px 5px;
+  position: relative;
+  top: -7%;
 }
 
 #body-closure ol li a {
@@ -180,14 +199,21 @@ section {
   color: var(--Light-Grayish-Blue-hover);
 }
 
+.todo-item-container {
+  border-radius: 5px 5px 0 0;
+}
+
+.todo-item-container .todo-item1:nth-of-type(1) {
+  border-radius: 5px 5px 0 0;
+}
+
 .todo-item1 {
   display: flex;
   justify-content: left;
   align-items: center;
   gap: 1rem;
-  border-top: 1px solid var(--Dark-Grayish-Blue);
   border-bottom: 1px solid var(--Dark-Grayish-Blue);
-  padding: 6px 10px;
+  padding: 15px;
   background-color: var(--Very-Dark-Desaturated-Blue);
 }
 
@@ -195,8 +221,7 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 2rem;
-  padding: 6px 10px;
+  padding: 15px;
   background-color: var(--Very-Dark-Desaturated-Blue);
 }
 
@@ -204,25 +229,24 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 0.6rem;
+  gap: 1.5rem;
   padding: 6px 0;
 }
 
-.inner-content a {
-  color: inherit;
+.inner-content li a {
   font-size: inherit;
 }
 
-.inner-content a:nth-child(1) {
-  color: var(--Bright-Blue);
+.inner-content li:nth-child(1) {
+  color: var(--Bright-Blue) !important;
 }
 
 footer {
   text-align: center;
   font-size: 0.8rem;
   color: var(--Very-Dark-Grayish-Blue);
-  position: absolute;
+  /* position: absolute;
   top: 95%;
-  left: 40%;
-  margin-bottom: 2rem;
+  left: 40%; */
+  margin-top: 2rem;
 }

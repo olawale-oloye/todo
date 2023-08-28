@@ -4,6 +4,8 @@ const lightMode = document.querySelector(".ri-moon-line");
 const formCont = document.querySelector("form");
 const inputField = document.querySelector("input");
 const todoItemContainer = document.querySelector(".todo-item-container");
+const todayDate = document.querySelector(".today-date");
+
 // let todos = JSON.parse(localStorage.getItem("todos"));
 // let todoItemArray = [];
 let todoItemArray = JSON.parse(localStorage.getItem("todos")) || [];
@@ -55,7 +57,7 @@ function displayTodoItem() {
     divElement.classList.add("todo-item1");
     todoItemContainer.appendChild(divElement);
   });
-  console.log(todos);
+  // console.log(todos);
 }
 displayTodoItem();
 
@@ -64,3 +66,5 @@ displayTodoItem();
   lastName: "Ade",
   email: "olawaleoloye@gmail.com",
 }; */
+
+todayDate.textContent = new Date().toString().split(" ").slice(0, 4).join(" ");

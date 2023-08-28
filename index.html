@@ -25,8 +25,14 @@
       <header id="top-banner">
         <div class="floating-banner">
           <h2>TODO</h2>
-          <i class="ri-sun-line"></i>
-          <i class="ri-moon-line"></i>
+          <div style="text-align: center">
+            <i class="ri-calendar-line"></i>
+            <p class="today-date">01 Aug 2023</p>
+          </div>
+          <div>
+            <i class="ri-sun-line"></i>
+            <i class="ri-moon-line"></i>
+          </div>
         </div>
       </header>
       <form>
@@ -38,7 +44,12 @@
 
       <section>
         <div id="body-closure">
-          <div class="todo-item-container"></div>
+          <div class="todo-item-container">
+            <!-- <label class="checkbox-cont">
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+            </label> -->
+          </div>
           <div class="todo-bottom">
             <ol>
               <li>
@@ -56,9 +67,8 @@
             </ol>
           </div>
         </div>
+        <footer><p>Drag and drop to reorder list</p></footer>
       </section>
-
-      <footer><p>Drag and drop to reorder list</p></footer>
     </div>
   </body>
   <script src="/assests/js/main.js"></script>
