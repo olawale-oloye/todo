@@ -68,3 +68,17 @@ displayTodoItem();
 }; */
 
 todayDate.textContent = new Date().toString().split(" ").slice(0, 4).join(" ");
+document.querySelector(".items-left").textContent = todoItemArray.length;
+document.querySelector(".clear-all").addEventListener("click", () => {
+  localStorage.clear();
+  location.reload();
+});
+
+todoItemContainer.addEventListener("click", (e) => {
+  // console.log(e.target);
+  if (e.target.classList.contains("todo-item1")) {
+    e.target.addEventListener("click", () => {
+      e.target.style.textDecoration = "line-through";
+    });
+  }
+});

@@ -217,6 +217,10 @@ section {
   background-color: var(--Very-Dark-Desaturated-Blue);
 }
 
+.todo-item1 p {
+  /* text-decoration: line-through; */
+}
+
 .todo-bottom {
   display: flex;
   justify-content: space-between;
