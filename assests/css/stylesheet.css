@@ -32,7 +32,7 @@
   --Light-Grayish-Blue-hover: #e4e5f1;
   --Dark-Grayish-Blue: #777a92;
   --Very-Dark-Grayish-Blue: #4d5066;
-  --Very-Dark-Grayish-Blue: #393a4c;
+  --Very-Dark-Grayish-Blue: #141418;
 }
 
 body,
@@ -169,8 +169,7 @@ nav input:focus {
 
 section {
   height: 100dvh;
-  background-color: var(--Very-Dark-Desaturated-Blue);
-  transition: 300;
+  background-color: var(--Very-Dark-Blue);
 }
 
 .checkmark {
@@ -219,6 +218,7 @@ section {
 
 .todo-item1 p {
   /* text-decoration: line-through; */
+  color: var(--Very-Light-Grayish-Blue);
 }
 
 .todo-bottom {
@@ -227,6 +227,7 @@ section {
   align-items: center;
   padding: 15px;
   background-color: var(--Very-Dark-Desaturated-Blue);
+  border-radius: 0 0 5px 5px;
 }
 
 .inner-content {
@@ -248,9 +249,47 @@ section {
 footer {
   text-align: center;
   font-size: 0.8rem;
-  color: var(--Very-Dark-Grayish-Blue);
+  color: var(--Dark-Grayish-Blue);
   /* position: absolute;
   top: 95%;
   left: 40%; */
   margin-top: 2rem;
+}
+
+@media screen and (max-width: 480px) {
+  .floating-banner {
+    flex-direction: column-reverse;
+    gap: 2rem;
+    padding-top: 1%;
+  }
+
+  nav {
+    top: 25%;
+    width: 90%;
+    left: 5%;
+  }
+
+  #body-closure {
+    top: -3%;
+    width: 90%;
+    left: 5%;
+    margin: 0;
+  }
+
+  .inner-content {
+    position: absolute;
+    bottom: -35%;
+    border-radius: 5px;
+    background-color: var(--Very-Dark-Desaturated-Blue);
+    padding: 15px;
+    width: 100%;
+    left: 0;
+  }
+
+  footer p {
+    position: absolute;
+    bottom: -40%;
+    left: 30%;
+    text-align: center;
+  }
 }

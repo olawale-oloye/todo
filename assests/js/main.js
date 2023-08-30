@@ -37,11 +37,12 @@ formCont.addEventListener("submit", function (e) {
     };
     todoItemArray.push(todoObject);
     localStorage.setItem("todos", JSON.stringify(todoItemArray));
-    console.log(todoItemArray);
+
     todoItemContainer.innerHTML += `<div class="todo-item1">
                                       <i class="ri-circle-line"></i>
                                       <p>${inputField.value}</p>
                                     </div>`;
+    // todoItemContainer.style.display = "color: white";
 
     inputField.value = "";
   }
