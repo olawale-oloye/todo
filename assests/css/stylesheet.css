@@ -80,7 +80,7 @@ a {
 
 .light-mode header {
   background-image: url(/assests/images/bg-desktop-light.jpg);
-  transition: 300;
+  height: 100vh;
 }
 
 /* .light-mode
@@ -104,7 +104,6 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(/assests/images/bg-desktop-dark.jpg);
-  transition: 300;
 }
 
 .floating-banner {
@@ -139,14 +138,13 @@ nav {
   font-size: 0.9rem;
   width: 40%;
   margin: 0 auto;
-  position: absolute;
-  top: 20%;
-  left: 30%;
+
   border: 1px solid var(--Very-Dark-Desaturated-Blue);
   background-color: var(--Very-Dark-Desaturated-Blue);
   border-radius: 5px;
   padding: 10px 10px;
-  transition: 300;
+  margin-top: -7rem;
+  margin-bottom: 3rem;
 }
 
 nav input {
@@ -186,8 +184,7 @@ section {
   color: var(--Dark-Grayish-Blue);
   box-shadow: 0 0 100px var(--Very-Dark-Blue);
   border-radius: 0 0 5px 5px;
-  position: relative;
-  top: -7%;
+  margin-top: -1rem;
 }
 
 #body-closure ol li a {
@@ -211,9 +208,6 @@ section {
   justify-content: left;
   align-items: center;
   gap: 1rem;
-  border-bottom: 1px solid var(--Dark-Grayish-Blue);
-  padding: 15px;
-  background-color: var(--Very-Dark-Desaturated-Blue);
 }
 
 .todo-item1 p {
@@ -256,6 +250,30 @@ footer {
   margin-top: 2rem;
 }
 
+.completed {
+  text-decoration: line-through;
+  color: var(--Dark-Grayish-Blue) !important;
+  transition: 0.5s;
+}
+
+.todo-item-style {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px solid var(--Dark-Grayish-Blue);
+  padding: 15px;
+  background-color: var(--Very-Dark-Desaturated-Blue);
+}
+
+.delete {
+  display: none;
+}
+
+.todo-item-style:hover .delete {
+  display: block;
+}
+
 @media screen and (max-width: 480px) {
   .floating-banner {
     flex-direction: column-reverse;
@@ -264,9 +282,13 @@ footer {
   }
 
   nav {
-    top: 25%;
+    top: 5%;
     width: 90%;
     left: 5%;
+    margin: 0 auto;
+    position: sticky;
+    margin-top: -20%;
+    margin-bottom: 10%;
   }
 
   #body-closure {
