@@ -9,7 +9,11 @@ const completedTask = document.getElementsByClassName("completed");
 const completedTaskArr = [];
 const activeBtn = document.querySelector(".active-btn");
 const active = document.getElementsByClassName("active");
-const activeTaskArr = [];
+let activeTaskArr = [];
+const modalBg = document.querySelector(".modal-bg");
+const listCompletedTaskContainer = document.querySelector(".modal-body");
+const listActiveTaskContainer = document.querySelector(".active-body");
+const closeModal = document.querySelectorAll(".ri-close-circle-fill");
 
 // let todos = JSON.parse(localStorage.getItem("todos"));
 // let todoItemArray = [];
@@ -93,17 +97,42 @@ todoItemContainer.addEventListener("click", (e) => {
     e.target.classList.toggle("completed");
     e.target.classList.toggle("active");
     completedTaskArr.push(e.target.textContent);
-    if (e.target.classList.contains("active")) {
+
+    /* for (let i = 0; i < todoItemArray.length; i++) {
+      activeTaskArr.push(todoItemArray[i] - completedTaskArr[i]);
+    } */
+
+    activeTaskArr = todoItemArray.filter(
+      (obj) => !completedTaskArr.includes(obj.todoText)
+    );
+
+    console.log(activeTaskArr);
+
+    /* if (e.target.classList.contains("active")) {
       console.log(e.target);
       activeTaskArr.push(e.target.textContent);
-    }
+    } */
   }
-  if (e.target.classList.contains("delete")) {
+  /* if (e.target.classList.contains("delete")) {
     e.target.parentElement.remove();
-  }
+  } */
 });
+
+activeBtn.addEventListener("click", function () {
+  modalBg.style.display = "flex";
+  document.querySelector(".modal-content").style.display = "none";
+  document.querySelector(".active-content").style.display = "block";
+  activeTaskArr.forEach((active, index) => {
+    const liElement = document.createElement("li");
+    liElement.innerHTML += `<li>${index + 1}.    ${active.todoText}</li>`;
+    listActiveTaskContainer.appendChild(liElement);
+  });
+});
+
 document.querySelector(".completed-btn").addEventListener("click", function () {
-  completedTaskArr.forEach((todo) => {
+  document.querySelector(".active-content").style.display = "none";
+
+  /*  completedTaskArr.forEach((todo) => {
     let divElement = document.createElement("div");
     divElement.innerHTML = `<div class="todo-item1">
                                 <i class="ri-circle-line"></i>
@@ -112,8 +141,20 @@ document.querySelector(".completed-btn").addEventListener("click", function () {
                            <i class = "delete"> X </i>`;
     divElement.classList.add("todo-item-style");
     todoItemContainer.appendChild(divElement);
+  }); */
+  modalBg.style.display = "flex";
+  completedTaskArr.forEach((completedTask, index) => {
+    const liElement = document.createElement("li");
+    liElement.innerHTML += `<li>${index + 1}.    ${completedTask}</li>`;
+    listCompletedTaskContainer.appendChild(liElement);
   });
   console.log(completedTaskArr);
+});
+
+closeModal.forEach((close) => {
+  close.addEventListener("click", function () {
+    modalBg.style.display = "none";
+  });
 });
 
 activeBtn.addEventListener("click", function () {
